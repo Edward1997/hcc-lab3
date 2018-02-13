@@ -206,3 +206,6 @@ include_directories(
 
 add_executable(pcl_example src/pcl_example.cpp)
 target_link_libraries(pcl_example ${catkin_LIBRARIES})
+
+add_executable(pcl_surface_normal src/pcl_surface_normal.cpp)
+target_link_libraries(pcl_surface_normal ${catkin_LIBRARIES})
