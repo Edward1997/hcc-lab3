@@ -40,7 +40,7 @@ void  cloud_cb (const sensor_msgs::PointCloud2ConstPtr& input)
   //Please use PCL to calculate surface normal
   //Input Point Cloud: cloud_no_nan, type: pcl::PointCloud<pcl::PointXYZ> 
   //Output Surface normal: cloud_normals, type: pcl::PointCloud<pcl::Normal>
-
+  //Hint: Read PCL surface noral example and your know will how to write
 
 
 
@@ -70,14 +70,14 @@ void  surface_normal_vis (PointCloudXYZ::Ptr point_cloud, PointCloudNormal::Ptr 
    
     for (int i = 0; i < point_cloud->points.size(); i=i+10)
     {
-      //Create point1: The point cloud
+      //Create point 1 for each line, and assign the point cloud value to the point 1
+      //Hint:  How to access point cloud coordinate: point_cloud-<points[i].x
 
 
 
-
-      //Create point2: The surface normal
-
-
+      //Create point 2 for each line, and assign the surface normal value to the point 2
+      //Hint: How to access surface normal: normal->points[i].normal[0];
+      //Hint: You can not directly assign surface normal to point 2, you should plus surface normal and point cloud coordinate first
 
 
  
