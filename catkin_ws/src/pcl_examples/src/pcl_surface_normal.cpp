@@ -41,7 +41,7 @@ void  cloud_cb (const sensor_msgs::PointCloud2ConstPtr& input)
   //Input Point Cloud: cloud_no_nan, type: pcl::PointCloud<pcl::PointXYZ> 
   //Output Surface normal: cloud_normals, type: pcl::PointCloud<pcl::Normal>
   //Hint: Read PCL surface noral example and your know will how to write
-
+  PointCloudNormal::Ptr cloud_normals (new PointCloudNormal);
 
 
 
@@ -72,18 +72,18 @@ void  surface_normal_vis (PointCloudXYZ::Ptr point_cloud, PointCloudNormal::Ptr 
     {
       //Create point 1 for each line, and assign the point cloud value to the point 1
       //Hint:  How to access point cloud coordinate: point_cloud-<points[i].x
-
+      geometry_msgs::Point p1; 
 
 
       //Create point 2 for each line, and assign the surface normal value to the point 2
       //Hint: How to access surface normal: normal->points[i].normal[0];
       //Hint: You can not directly assign surface normal to point 2, you should plus surface normal and point cloud coordinate first
-
+      geometry_msgs::Point p2; 
 
  
-      // The line list needs two points for each line (Fill the blank)
-      line_list.points.push_back("XXX");
-      line_list.points.push_back("XXX");
+      // The line list needs two points for each line .(Please uncomment the line 85 and 86 and Fill the blank)
+      //line_list.points.push_back("XXX");
+      //line_list.points.push_back("XXX");
     }
     ////////////////////////////////////////////////////////////////////////
     surface_normal_vis_publisher.publish(line_list);
